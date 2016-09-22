@@ -15,6 +15,7 @@
 package com.liferay.document.library.jaxrs;
 
 import com.liferay.document.library.jaxrs.provider.CORSRequestFilter;
+import com.liferay.document.library.jaxrs.provider.CORSResponseFilter;
 import com.liferay.document.library.jaxrs.provider.CompanyContextProvider;
 import com.liferay.document.library.jaxrs.provider.OptionalBodyWriter;
 import com.liferay.document.library.jaxrs.provider.OrderBySelectorContextProvider;
@@ -71,8 +72,8 @@ public class DocumentLibraryJaxRApplication extends Application {
 			Arrays.asList(
 				ApiListingResource.class, SwaggerSerializers.class,
 				CompanyContextProvider.class, CORSRequestFilter.class,
-				OptionalBodyWriter.class, PaginationProvider.class,
-				OrderBySelectorContextProvider.class,
+				CORSResponseFilter.class, OptionalBodyWriter.class,
+				PaginationProvider.class, OrderBySelectorContextProvider.class,
 				PageContainerMessageBodyWriter.class));
 	}
 

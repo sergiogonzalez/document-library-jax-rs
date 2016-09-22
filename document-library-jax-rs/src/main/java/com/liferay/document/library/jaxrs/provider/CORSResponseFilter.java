@@ -19,22 +19,23 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.container.ContainerResponseContext;
+import javax.ws.rs.container.ContainerResponseFilter;
 
 /**
  * @author Carlos Sierra Andrés
  */
-public class CORSRequestFilter implements ContainerRequestFilter {
+public class CORSResponseFilter implements ContainerResponseFilter {
 
-	@Override
-	public void filter(ContainerRequestContext containerRequestContext)
-		throws IOException {
+	public void filter(
+		ContainerRequestContext requestContext,
+		ContainerResponseContext responseContext) throws IOException {
 
-		if (containerRequestContext.getMethod().equals("OPTIONS")) {
-			containerRequestContext.abortWith(
-				Response.ok().header("Access-Control-Allow-Origin", Arrays.<Object>asList("*")).header("Access-Control-Allow-Headers", Arrays.<Object>asList("authorization")).build());
+		responseContext.getHeaders().put(
+			"Access-Control-Allow-Origin", Arrays.<Object>asList("*"));
+		responseContext.getHeaders().put(
+			"Access-Control-Allow-Headers",
+			Arrays.<Object>asList("authorization"));
 		}
-	}
 
 }
