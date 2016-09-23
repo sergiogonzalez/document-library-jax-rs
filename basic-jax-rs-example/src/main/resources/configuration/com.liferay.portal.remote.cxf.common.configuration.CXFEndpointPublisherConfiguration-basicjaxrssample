@@ -1,0 +1,2 @@
+contextPath=/sample
+authVerifierProperties=auth.verifier.PortalSessionAuthVerifier.urls.includes=*
