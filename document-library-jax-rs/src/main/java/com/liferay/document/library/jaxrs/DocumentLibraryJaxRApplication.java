@@ -20,7 +20,7 @@ import com.liferay.document.library.jaxrs.provider.CompanyContextProvider;
 import com.liferay.document.library.jaxrs.provider.OptionalBodyWriter;
 import com.liferay.document.library.jaxrs.provider.OrderBySelectorContextProvider;
 import com.liferay.document.library.jaxrs.provider.PageContainerMessageBodyWriter;
-import com.liferay.document.library.jaxrs.provider.PaginationProvider;
+import com.liferay.document.library.jaxrs.provider.PaginationContextProvider;
 
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.config.DefaultJaxrsScanner;
@@ -73,7 +73,7 @@ public class DocumentLibraryJaxRApplication extends Application {
 				ApiListingResource.class, SwaggerSerializers.class,
 				CompanyContextProvider.class, CORSRequestFilter.class,
 				CORSResponseFilter.class, OptionalBodyWriter.class,
-				PaginationProvider.class, OrderBySelectorContextProvider.class,
+				PaginationContextProvider.class, OrderBySelectorContextProvider.class,
 				PageContainerMessageBodyWriter.class));
 	}
 

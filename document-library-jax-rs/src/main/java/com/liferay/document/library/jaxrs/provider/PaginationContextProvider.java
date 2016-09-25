@@ -28,7 +28,7 @@ import org.apache.cxf.message.Message;
  * @author Carlos Sierra Andrés
  */
 @Provider
-public class PaginationProvider implements ContextProvider<Pagination> {
+public class PaginationContextProvider implements ContextProvider<Pagination> {
 
 	public static final int DEFAULT_ITEMS_PER_PAGE = 30;
 
